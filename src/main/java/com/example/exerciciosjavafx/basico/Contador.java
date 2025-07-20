@@ -22,11 +22,13 @@ public class Contador extends Application {
         labelNumero.getStyleClass().add("numero");
 
         Button buttonIncrement = new Button("+");
+        buttonIncrement.getStyleClass().add("botoes");
         buttonIncrement.setOnAction(e -> {
             contador++;
             labelNumero.setText(Integer.toString(contador));
         });
         Button buttonDecrement = new Button("-");
+        buttonDecrement.getStyleClass().add("botoes");
         buttonDecrement.setOnAction(e -> {
             contador--;
             labelNumero.setText(Integer.toString(contador));
