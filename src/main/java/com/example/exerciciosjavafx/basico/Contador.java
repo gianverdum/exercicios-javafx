@@ -11,13 +11,23 @@ import javafx.stage.Stage;
 
 public class Contador extends Application {
 
+    private int contador = 0;
+
     @Override
     public void start(Stage stage) throws Exception {
         Label labelTitulo = new Label("Contador");
         Label labelNumero = new Label("0");
 
         Button buttonIncrement = new Button("+");
+        buttonIncrement.setOnAction(e -> {
+            contador++;
+            labelNumero.setText(Integer.toString(contador));
+        });
         Button buttonDecrement = new Button("-");
+        buttonDecrement.setOnAction(e -> {
+            contador--;
+            labelNumero.setText(Integer.toString(contador));
+        });
 
         HBox boxButtons = new HBox();
         boxButtons.setAlignment(Pos.CENTER);
