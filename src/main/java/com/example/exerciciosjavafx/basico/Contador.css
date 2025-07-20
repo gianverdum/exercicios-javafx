@@ -1,0 +1,15 @@
+.conteudo {
+    -fx-background-color: black;
+    -fx-font-family: "Bitcount Grid Single";
+    -fx-text-fill: #dedddd;
+}
+
+. titulo {
+    -fx-text-fill: #4ba6e6;
+    -fx-font-size: 52px;
+}
+
+. numero {
+    -fx-text-fill: #eee;
+    -fx-font-size: 44px;
+}

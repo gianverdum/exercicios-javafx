@@ -16,7 +16,10 @@ public class Contador extends Application {
     @Override
     public void start(Stage stage) throws Exception {
         Label labelTitulo = new Label("Contador");
+        labelTitulo.getStyleClass().add("titulo");
+
         Label labelNumero = new Label("0");
+        labelNumero.getStyleClass().add("numero");
 
         Button buttonIncrement = new Button("+");
         buttonIncrement.setOnAction(e -> {
@@ -34,11 +37,18 @@ public class Contador extends Application {
         boxButtons.setSpacing(10);
         boxButtons.getChildren().addAll(buttonIncrement, buttonDecrement);
 
-        VBox boxPrincipal = new VBox();
-        boxPrincipal.setAlignment(Pos.CENTER);
-        boxPrincipal.setSpacing(10);
-        boxPrincipal.getChildren().addAll(labelTitulo, labelNumero, boxButtons);
-        Scene sceneMain = new Scene(boxPrincipal, 400, 400);
+        VBox boxConteudo = new VBox();
+        boxConteudo.getStyleClass().add("conteudo");
+        boxConteudo.setAlignment(Pos.CENTER);
+        boxConteudo.setSpacing(10);
+        boxConteudo.getChildren().addAll(labelTitulo, labelNumero, boxButtons);
+
+        String caminhoDoCss = getClass()
+                .getResource("/com/example/exerciciosjavafx/basico/Contador.css")
+                .toExternalForm();
+        Scene sceneMain = new Scene(boxConteudo, 400, 400);
+        sceneMain.getStylesheets().add(caminhoDoCss);
+        sceneMain.getStylesheets().add("https://fonts.googleapis.com/css2?family=Bitcount+Grid+Single:wght@100..900");
 
         stage.setScene(sceneMain);
         stage.show();

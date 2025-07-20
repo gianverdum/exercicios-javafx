@@ -47,6 +47,19 @@
     </dependencies>
 
     <build>
+        <resources>
+            <!-- recursos normais -->
+            <resource>
+                <directory>src/main/resources</directory>
+            </resource>
+            <!-- os CSS dentro de src/main/java -->
+            <resource>
+                <directory>src/main/java</directory>
+                <includes>
+                    <include>**/*.css</include>
+                </includes>
+            </resource>
+        </resources>
         <plugins>
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
